@@ -10,6 +10,20 @@ var employees = [
 
 // Part 2 Answer Here
 
+const organizeStaff = (staffInfo) => {
+  return staffInfo.reduce( (organizedStaff, employee) => {
+    if(!organizedStaff[employee.group]) {
+      organizedStaff[employee.group] = [];
+    }
+    
+    organizedStaff[employee.group].push({name: `${employee.first} ${employee.last}`})
+
+    return organizedStaff
+  }, {})
+}
+
+console.log(organizeStaff(employees))
+
 /*****************************************************************************************
 * Bonus
 ****************************************************************************************/
